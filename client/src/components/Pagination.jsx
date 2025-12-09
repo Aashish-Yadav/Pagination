@@ -5,7 +5,7 @@ import ProductCard from './ProductCard'
     function Pagination() {
 
         const [products , setProducts] = useState([])
-        const [currentPage, setCurrentPage] = useState("0");
+        const [currentPage, setCurrentPage] = useState(0);
 
 
         const fetchData = async () => {
@@ -68,7 +68,7 @@ import ProductCard from './ProductCard'
                 </button>
                 {                
                     [...Array(pages).keys()].map((n) => (
-                        <span key={n}  className={`p-4 border m-2 cursor-pointer ${currentPage===n ? 'bg-blue-500 text-white' : 'bg-gray-300 text-black'}` }
+                        <span key={n}  className={`p-4 border m-2 cursor-pointer ${currentPage === n ? 'bg-blue-500 text-white' : 'bg-gray-300 text-black'}` }
                         value={currentPage}
                         onClick={()=> handlePageChange(n)}>{n+1}</span>
                     ))
